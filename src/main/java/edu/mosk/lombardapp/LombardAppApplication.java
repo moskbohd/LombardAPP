@@ -1,4 +1,10 @@
 package edu.mosk.lombardapp;
+/*
+  @author   moskb
+  @project  LombardAPP
+  @version  1.0.0
+  @since    11.08.2022
+*/
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,10 @@
 package edu.mosk.lombardapp.model;
+/*
+  @author   moskb
+  @project   LombardAPP
+  @version  1.0.0
+  @since 11.08.2022
+*/
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -10,27 +16,24 @@ public class Person {
     String patronymic;
     String passportNumber;
     String passportSeries;
-    String passport;
     String passportIssueDate;
     String phoneNumber;
     String email;
     String personDescription;
     LocalDateTime createdAt;
     LocalDateTime updatedAt;
-    Product product;
 
     // CONSTRUCTORS
     public Person() {
     }
 
-    public Person(String id, String firstname, String surname, String patronymic, String passportNumber, String passportSeries, String passport, String passportIssueDate, String phoneNumber, String email, String personDescription, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Person(String id, String firstname, String surname, String patronymic, String passportNumber, String passportSeries, String passportIssueDate, String phoneNumber, String email, String personDescription, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.firstname = firstname;
         this.surname = surname;
         this.patronymic = patronymic;
         this.passportNumber = passportNumber;
         this.passportSeries = passportSeries;
-        this.passport = passport;
         this.passportIssueDate = passportIssueDate;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -44,115 +47,99 @@ public class Person {
         return id;
     }
 
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public String getPatronymic() {
-        return patronymic;
-    }
-
-    public String getPassportNumber() {
-        return passportNumber;
-    }
-
-    public String getPassportSeries() {
-        return passportSeries;
-    }
-
-    public String getPassport() {
-        return passport;
-    }
-
-    public String getPassportIssueDate() {
-        return passportIssueDate;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPersonDescription() {
-        return personDescription;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-
     //SETTERS
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getFirstname() {
+        return firstname;
     }
 
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 
+    public String getSurname() {
+        return surname;
+    }
+
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
     }
 
     public void setPatronymic(String patronymic) {
         this.patronymic = patronymic;
     }
 
+    public String getPassportNumber() {
+        return passportNumber;
+    }
+
     public void setPassportNumber(String passportNumber) {
         this.passportNumber = passportNumber;
+    }
+
+    public String getPassportSeries() {
+        return passportSeries;
     }
 
     public void setPassportSeries(String passportSeries) {
         this.passportSeries = passportSeries;
     }
 
-    public void setPassport(String passport) {
-        this.passport = passport;
+    public String getPassportIssueDate() {
+        return passportIssueDate;
     }
 
     public void setPassportIssueDate(String passportIssueDate) {
         this.passportIssueDate = passportIssueDate;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setEmail(String email){
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPersonDescription() {
+        return personDescription;
     }
 
     public void setPersonDescription(String personDescription) {
         this.personDescription = personDescription;
     }
 
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
-    }
 
     // EQUALS AND HASHCODE
     @Override
@@ -168,6 +155,7 @@ public class Person {
         return Objects.hash(getId());
     }
 
+
     // TO STRING
     @Override
     public String toString() {
@@ -178,14 +166,12 @@ public class Person {
                 ", patronymic='" + patronymic + '\'' +
                 ", passportNumber='" + passportNumber + '\'' +
                 ", passportSeries='" + passportSeries + '\'' +
-                ", passport='" + passport + '\'' +
                 ", passportIssueDate='" + passportIssueDate + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", personDescription='" + personDescription + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
-                ", product=" + product +
                 '}';
     }
 }
