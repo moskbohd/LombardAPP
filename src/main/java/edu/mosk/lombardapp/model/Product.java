@@ -31,12 +31,11 @@ public class Product {
         this.productDescription = productDescription;
     }
 
-    // GETTERS
+    // GETTERS AND SETTERS
     public String getId() {
         return id;
     }
 
-    //SETTERS
     public void setId(String id) {
         this.id = id;
     }
