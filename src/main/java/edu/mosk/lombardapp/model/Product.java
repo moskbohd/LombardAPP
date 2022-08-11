@@ -16,19 +16,23 @@ public class Product {
     String productName;
     double productWeight;
     String productDescription;
+    LocalDateTime createdAt;
+    LocalDateTime updatedAt;
 
 
     // CONSTRUCTORS
     public Product() {
     }
 
-    public Product(String id, ProductType productType, ProductCondition productCondition, Person personBuyer, Person personOwner, String productName, double productPrice, double commission, double productWeight, String productDescription, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime timeRemaining) {
+    public Product(String id, ProductType productType, ProductCondition productCondition, String productName, double productWeight, String productDescription, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.productType = productType;
         this.productCondition = productCondition;
         this.productName = productName;
         this.productWeight = productWeight;
         this.productDescription = productDescription;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     // GETTERS AND SETTERS
@@ -80,6 +84,21 @@ public class Product {
         this.productDescription = productDescription;
     }
 
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 
     // EQUALS AND HASHCODE
     @Override
