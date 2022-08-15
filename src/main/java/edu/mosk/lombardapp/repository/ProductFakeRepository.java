@@ -17,6 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
+@Repository
 public class ProductFakeRepository {
 
     private LocalDateTime now = LocalDateTime.now();
@@ -44,7 +45,7 @@ public class ProductFakeRepository {
 
     public void deleteById(String id) {
         Product product = this.findById(id);
-        int index = product.indexOf(product);
+        int index = products.indexOf(product);
         this.products.remove(index);
 
     }
@@ -55,4 +56,5 @@ public class ProductFakeRepository {
         this.products.add(product);
         return product;
     }
+
 }

@@ -6,26 +6,26 @@ package edu.mosk.lombardapp.conroller.api;
   @since 11.08.2022
 */
 
-import edu.mosk.lombardapp.model.Product;
-import edu.mosk.lombardapp.service.impls.ProductServiceImpl;
+import edu.mosk.lombardapp.model.PriceHistory;
+import edu.mosk.lombardapp.service.impls.PriceHistoryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/api/v1/products/")
+@RequestMapping("/api/v1/priceHistory/")
 @RestController
-class ProductRestController {
+public class PriceHistoryRestController {
 
     @Autowired
-    ProductServiceImpl service;
+    PriceHistoryServiceImpl service;
     @GetMapping("")
-    public List<Product> showAll(){
+    public List<PriceHistory> showAll(){
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public Product showOne(@PathVariable String id){
+    public PriceHistory showOne(@PathVariable String id){
         return service.get(id);
     }
 
@@ -35,12 +35,12 @@ class ProductRestController {
     }
 
     @PostMapping()
-    public Product insertOne(@RequestBody Product product){
-        return service.create(product);
+    public PriceHistory insertOne(@RequestBody PriceHistory priceHistory){
+        return service.create(priceHistory);
     }
     @PutMapping()
-    public Product updateOne(@RequestBody Product product){
-        return service.update(product);
+    public PriceHistory updateOne(@RequestBody PriceHistory priceHistory){
+        return service.update(priceHistory);
     }
 
 }

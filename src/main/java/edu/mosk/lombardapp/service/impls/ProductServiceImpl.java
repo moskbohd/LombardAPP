@@ -8,13 +8,13 @@ package edu.mosk.lombardapp.service.impls;
 
 import edu.mosk.lombardapp.model.Product;
 import edu.mosk.lombardapp.repository.ProductFakeRepository;
-import edu.mosk.lombardapp.service.interfaces.IItemService;
 import edu.mosk.lombardapp.service.interfaces.IProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements IProductServiceImpl {
 
     @Autowired
@@ -25,8 +25,7 @@ public class ProductServiceImpl implements IProductServiceImpl {
     }
 
     @Override
-    public Product update(Product product) {
-        return repository.update(product);
+    public Product update(Product product) { return repository.update(product);
     }
 
     @Override
@@ -39,4 +38,5 @@ public class ProductServiceImpl implements IProductServiceImpl {
 
     @Override
     public List<Product> getAll() { return repository.findAll();  }
+
 }
