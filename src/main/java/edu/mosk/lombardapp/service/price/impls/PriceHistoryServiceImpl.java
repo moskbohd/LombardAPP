@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.service.impls;
+package edu.mosk.lombardapp.service.price.impls;
 /*
   @author   moskb
   @project   LombardAPP
@@ -9,7 +9,7 @@ package edu.mosk.lombardapp.service.impls;
 import edu.mosk.lombardapp.model.PriceHistory;
 import edu.mosk.lombardapp.model.Product;
 import edu.mosk.lombardapp.repository.PriceHistoryFakeRepository;
-import edu.mosk.lombardapp.service.interfaces.IPriceHistoryServiceImpl;
+import edu.mosk.lombardapp.service.price.interfaces.IPriceHistoryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

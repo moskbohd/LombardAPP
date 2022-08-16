@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.conroller.api;
+package edu.mosk.lombardapp.conroller.rest;
 /*
   @author   moskb
   @project   LombardAPP
@@ -7,7 +7,7 @@ package edu.mosk.lombardapp.conroller.api;
 */
 
 import edu.mosk.lombardapp.model.PriceHistory;
-import edu.mosk.lombardapp.service.impls.PriceHistoryServiceImpl;
+import edu.mosk.lombardapp.service.price.impls.PriceHistoryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

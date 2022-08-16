@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.service.interfaces;
+package edu.mosk.lombardapp.service.price.interfaces;
 /*
   @author   moskb
   @project   LombardAPP

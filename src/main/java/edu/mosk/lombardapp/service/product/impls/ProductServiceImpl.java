@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.service.impls;
+package edu.mosk.lombardapp.service.product.impls;
 /*
   @author   moskb
   @project   LombardAPP
@@ -8,7 +8,7 @@ package edu.mosk.lombardapp.service.impls;
 
 import edu.mosk.lombardapp.model.Product;
 import edu.mosk.lombardapp.repository.ProductFakeRepository;
-import edu.mosk.lombardapp.service.interfaces.IProductServiceImpl;
+import edu.mosk.lombardapp.service.product.interfaces.IProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

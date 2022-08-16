@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.service.interfaces;
+package edu.mosk.lombardapp.service.product.interfaces;
 /*
   @author   moskb
   @project   LombardAPP
