@@ -12,8 +12,10 @@ import java.util.Objects;
 public class PriceHistory {
     String id;
     Product product;
+    String description;
     LocalDateTime createdAt;
     double price;
+
 
     // CONSTRUCTORS
 

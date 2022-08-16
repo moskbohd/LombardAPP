@@ -11,7 +11,7 @@ import java.util.Objects;
 
 public class SellingProduct {
     Product product;
-    PriceHistory priceHistory;
+    double price;
     LocalDateTime onSellingSince;
     LocalDateTime editedAt;
 
@@ -20,9 +20,9 @@ public class SellingProduct {
     public SellingProduct() {
     }
 
-    public SellingProduct(Product product, PriceHistory priceHistory, LocalDateTime onSellingSince, LocalDateTime editedAt) {
+    public SellingProduct(Product product, double price, LocalDateTime onSellingSince, LocalDateTime editedAt) {
         this.product = product;
-        this.priceHistory = priceHistory;
+        this.price = price;
         this.onSellingSince = onSellingSince;
         this.editedAt = editedAt;
     }
@@ -37,12 +37,12 @@ public class SellingProduct {
         this.product = product;
     }
 
-    public PriceHistory getPriceHistory() {
-        return priceHistory;
+    public double getPrice() {
+        return price;
     }
 
-    public void setPriceHistory(PriceHistory priceHistory) {
-        this.priceHistory = priceHistory;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public LocalDateTime getOnSellingSince() {
@@ -67,12 +67,12 @@ public class SellingProduct {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof SellingProduct that)) return false;
-        return getProduct().equals(that.getProduct()) && getPriceHistory().equals(that.getPriceHistory()) && getOnSellingSince().equals(that.getOnSellingSince()) && Objects.equals(getEditedAt(), that.getEditedAt());
+        return Double.compare(that.getPrice(), getPrice()) == 0 && getProduct().equals(that.getProduct()) && getOnSellingSince().equals(that.getOnSellingSince()) && getEditedAt().equals(that.getEditedAt());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getProduct(), getPriceHistory(), getOnSellingSince(), getEditedAt());
+        return Objects.hash(getProduct(), getPrice(), getOnSellingSince(), getEditedAt());
     }
 
     // TO STRING
@@ -82,7 +82,7 @@ public class SellingProduct {
         return "SellingProduct{" +
                 "product=" + product +
                 ", onSellingSince=" + onSellingSince +
-                ", price=" + priceHistory +
+                ", price=" + price +
                 ", editedAt=" + editedAt +
                 '}';
     }
