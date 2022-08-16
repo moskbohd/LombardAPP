@@ -10,18 +10,18 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Person {
-    String id;
-    String firstname;
-    String surname;
-    String patronymic;
-    String passportNumber;
-    String passportSeries;
-    String passportIssueDate;
-    String phoneNumber;
-    String email;
-    String personDescription;
-    LocalDateTime createdAt;
-    LocalDateTime updatedAt;
+    private String id;
+    private String firstname;
+    private String surname;
+    private String patronymic;
+    private String passportNumber;
+    private String passportSeries;
+    private String passportIssueDate;
+    private String phoneNumber;
+    private String email;
+    private String personDescription;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     // CONSTRUCTORS
     public Person() {
@@ -47,7 +47,7 @@ public class Person {
         return id;
     }
 
-   public void setId(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
