@@ -11,13 +11,13 @@ import java.util.Objects;
 */
 
 public class Receipt {
-    Person person;
-    Product product;
-    LocalDateTime dateOfSigning;
-    LocalDateTime dateOfExpiration;
-    double priceOfProduct;
-    double commission;
-    String description;
+    private Person person;
+    private Product product;
+    private LocalDateTime dateOfSigning;
+    private LocalDateTime dateOfExpiration;
+    private double priceOfProduct;
+    private double commission;
+    private String description;
 
     // CONSTRUCTORS
 

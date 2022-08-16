@@ -20,7 +20,7 @@ import java.util.List;
 public class PriceHistoryServiceImpl implements IPriceHistoryServiceImpl {
 
     @Autowired
-    PriceHistoryFakeRepository repository;
+    private PriceHistoryFakeRepository repository;
 
     @Override
     public PriceHistory create(PriceHistory priceHistory) { return repository.save(priceHistory);

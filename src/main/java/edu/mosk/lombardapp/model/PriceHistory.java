@@ -10,11 +10,11 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class PriceHistory {
-    String id;
-    Product product;
-    String description;
-    LocalDateTime createdAt;
-    double price;
+    private String id;
+    private Product product;
+    private String description;
+    private LocalDateTime createdAt;
+    private double price;
 
 
     // CONSTRUCTORS
@@ -22,9 +22,10 @@ public class PriceHistory {
     public PriceHistory() {
     }
 
-    public PriceHistory(String id, Product product, LocalDateTime createdAt, double price) {
+    public PriceHistory(String id, Product product, String description, LocalDateTime createdAt, double price) {
         this.id = id;
         this.product = product;
+        this.description = description;
         this.createdAt = createdAt;
         this.price = price;
     }
@@ -45,6 +46,14 @@ public class PriceHistory {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -69,21 +78,24 @@ public class PriceHistory {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof PriceHistory that)) return false;
-        return Double.compare(that.getPrice(), getPrice()) == 0 && getId().equals(that.getId()) && getProduct().equals(that.getProduct()) && getCreatedAt().equals(that.getCreatedAt());
+        return Double.compare(that.getPrice(), getPrice()) == 0 && getId().equals(that.getId()) && getProduct().equals(that.getProduct()) && Objects.equals(getDescription(), that.getDescription()) && getCreatedAt().equals(that.getCreatedAt());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getProduct(), getCreatedAt(), getPrice());
+        return Objects.hash(getId(), getProduct(), getDescription(), getCreatedAt(), getPrice());
     }
 
+
     // TO STRING
+
 
     @Override
     public String toString() {
         return "PriceHistory{" +
                 "id='" + id + '\'' +
                 ", product=" + product +
+                ", description='" + description + '\'' +
                 ", createdAt=" + createdAt +
                 ", price=" + price +
                 '}';

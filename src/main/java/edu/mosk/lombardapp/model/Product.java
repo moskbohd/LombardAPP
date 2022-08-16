@@ -10,14 +10,14 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Product {
-    String id;
-    ProductType productType;
-    ProductCondition productCondition;
-    String productName;
-    double productWeight;
-    String productDescription;
-    LocalDateTime createdAt;
-    LocalDateTime updatedAt;
+    private String id;
+    private ProductType productType;
+    private ProductCondition productCondition;
+    private String productName;
+    private double productWeight;
+    private String productDescription;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
 
     // CONSTRUCTORS
@@ -101,27 +101,33 @@ public class Product {
     }
 
     // EQUALS AND HASHCODE
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return getId().equals(product.getId());
+        if (!(o instanceof Product product)) return false;
+        return Double.compare(product.getProductWeight(), getProductWeight()) == 0 && getId().equals(product.getId()) && getProductType() == product.getProductType() && getProductCondition() == product.getProductCondition() && getProductName().equals(product.getProductName()) && Objects.equals(getProductDescription(), product.getProductDescription()) && getCreatedAt().equals(product.getCreatedAt()) && Objects.equals(getUpdatedAt(), product.getUpdatedAt());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId());
+        return Objects.hash(getId(), getProductType(), getProductCondition(), getProductName(), getProductWeight(), getProductDescription(), getCreatedAt(), getUpdatedAt());
     }
 
     // TO STRING
+
     @Override
     public String toString() {
         return "Product{" +
                 "id='" + id + '\'' +
+                ", productType=" + productType +
+                ", productCondition=" + productCondition +
                 ", productName='" + productName + '\'' +
                 ", productWeight=" + productWeight +
                 ", productDescription='" + productDescription + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

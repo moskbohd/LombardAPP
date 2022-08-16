@@ -18,7 +18,7 @@ import java.util.List;
 public class PriceHistoryRestController {
 
     @Autowired
-    PriceHistoryServiceImpl service;
+    private PriceHistoryServiceImpl service;
     @GetMapping("")
     public List<PriceHistory> showAll(){
         return service.getAll();

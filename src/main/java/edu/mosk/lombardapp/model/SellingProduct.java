@@ -10,10 +10,10 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class SellingProduct {
-    Product product;
-    double price;
-    LocalDateTime onSellingSince;
-    LocalDateTime editedAt;
+    private Product product;
+    private double price;
+    private LocalDateTime onSellingSince;
+    private LocalDateTime editedAt;
 
     // CONSTRUCTORS
 

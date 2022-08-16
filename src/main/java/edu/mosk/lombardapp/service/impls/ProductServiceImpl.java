@@ -18,7 +18,7 @@ import java.util.List;
 public class ProductServiceImpl implements IProductServiceImpl {
 
     @Autowired
-    ProductFakeRepository repository;
+    private ProductFakeRepository repository;
 
     @Override
     public Product create(Product product) { return repository.save(product);

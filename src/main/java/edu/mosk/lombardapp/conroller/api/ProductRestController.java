@@ -18,7 +18,7 @@ import java.util.List;
 class ProductRestController {
 
     @Autowired
-    ProductServiceImpl service;
+    private ProductServiceImpl service;
     @GetMapping("")
     public List<Product> showAll(){
         return service.getAll();

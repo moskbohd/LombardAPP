@@ -22,8 +22,8 @@ public class PriceHistoryFakeRepository {
     private ProductFakeRepository product = new ProductFakeRepository();
     private List<PriceHistory> prices = new ArrayList<>(
             Arrays.asList(
-                    new PriceHistory("1", product.findById("1"), now, 14.21),
-                    new PriceHistory("2", product.findById("2"), now, 22.12)
+                    new PriceHistory("1", product.findById("1"), "", now, 14.21),
+                    new PriceHistory("2", product.findById("2"), "", now, 22.12)
             ));
 
     public List<PriceHistory> findAll(){
