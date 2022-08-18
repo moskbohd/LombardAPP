@@ -6,10 +6,15 @@ package edu.mosk.lombardapp.model;
   @since 11.08.2022
 */
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Document
 public class Product {
+    @Id
     private String id;
     private ProductType productType;
     private ProductCondition productCondition;
