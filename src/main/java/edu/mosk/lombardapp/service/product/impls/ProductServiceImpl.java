@@ -13,7 +13,6 @@ import edu.mosk.lombardapp.repository.product.IProductMongoRepository;
 import edu.mosk.lombardapp.service.product.interfaces.IProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
