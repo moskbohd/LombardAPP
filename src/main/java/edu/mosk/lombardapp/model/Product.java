@@ -18,9 +18,10 @@ public class Product {
     private String id;
     private ProductType productType;
     private ProductCondition productCondition;
-    private String productName;
+    private String name;
     private double productWeight;
     private String productDescription;
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -33,7 +34,7 @@ public class Product {
         this.id = id;
         this.productType = productType;
         this.productCondition = productCondition;
-        this.productName = productName;
+        this.name = productName;
         this.productWeight = productWeight;
         this.productDescription = productDescription;
         this.createdAt = createdAt;
@@ -66,11 +67,11 @@ public class Product {
     }
 
     public String getProductName() {
-        return productName;
+        return name;
     }
 
     public void setProductName(String productName) {
-        this.productName = productName;
+        this.name = productName;
     }
 
     public double getProductWeight() {
@@ -128,7 +129,7 @@ public class Product {
                 "id='" + id + '\'' +
                 ", productType=" + productType +
                 ", productCondition=" + productCondition +
-                ", productName='" + productName + '\'' +
+                ", productName='" + name + '\'' +
                 ", productWeight=" + productWeight +
                 ", productDescription='" + productDescription + '\'' +
                 ", createdAt=" + createdAt +
