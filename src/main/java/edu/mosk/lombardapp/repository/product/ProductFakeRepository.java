@@ -23,8 +23,8 @@ public class ProductFakeRepository {
     private LocalDateTime now = LocalDateTime.now();
     private List<Product> products = new ArrayList<>(
             Arrays.asList(
-                    new Product("1", ProductType.JEWELER, ProductCondition.BELONGTOLOMBARD, "ruby", 0.5, "good"),
-                    new Product("2", ProductType.TECHNICS, ProductCondition.BELONGTOLOMBARD, "iphone 6s", 1.5, "poor")
+                    new Product("1", ProductType.JEWELER, ProductCondition.BELONGTOLOMBARD, "ruby", 0.5, "good",now),
+                    new Product("2", ProductType.TECHNICS, ProductCondition.BELONGTOLOMBARD, "iphone 6s", 1.5, "poor",now)
             ));
 
     public List<Product> findAll(){

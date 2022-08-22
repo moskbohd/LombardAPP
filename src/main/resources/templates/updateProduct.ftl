@@ -12,24 +12,21 @@
 
     <fieldset>
         <form name="product" action="" method="POST">
-            id:<@spring.formInput "form.id" "" "text" />
+            productName:<@spring.formInput "form.productName" "" "text" />
             <br>
-            name:<@spring.formInput "form.name" "" "text" />
+            productType: (TECHNICS, JEWELER, TOYS, CLOTHES, OTHERS)<@spring.formInput "form.productType" "" "text" />
             <br>
-            description:<@spring.formInput "form.description" "" "text" />
+            productCondition: (BELONGTOOWNER, BELONGTOLOMBARD, SOLD)<@spring.formInput "form.productCondition" "" "text" />
             <br>
-            created :<@spring.formInput "form.createdAt" "" "date" />
+            productWeight:<@spring.formInput "form.productWeight" "" "double" />
             <br>
-             updated :<@spring.formInput "form.updatedAt" "" "date" />
+            productDescription:<@spring.formInput "form.productDescription" "" "text" />
             <br>
-
             <input type="submit" value="Save">
 
         </form>
 
     </fieldset>
-
-
 
 </div>
 

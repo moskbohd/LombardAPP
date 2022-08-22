@@ -34,7 +34,7 @@ public class ProductUIController {
     @GetMapping("/del/{id}")
     public String deleteById(@PathVariable("id") String id) {
         service.delete(id);
-        return  "redirect:/ui/v1/products/";
+        return "redirect:/ui/v1/products/";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
@@ -52,6 +52,8 @@ public class ProductUIController {
         product.setProductName(form.getProductName());
         product.setProductWeight(form.getProductWeight());
         product.setProductDescription(form.getProductDescription());
+        product.setCreatedAt(LocalDateTime.now());
+
         service.create(product);
         return "redirect:/ui/v1/products/";
     }
@@ -60,14 +62,15 @@ public class ProductUIController {
     public String updateProduct(Model model, @PathVariable("id") String id){
         Product productToUpdate = service.get(id);
         ProductForm productForm = new ProductForm();
-        productForm.setId(productToUpdate.getId());
+        productForm.setProductType(productToUpdate.getProductType());
+        productForm.setProductCondition(productToUpdate.getProductCondition());
         productForm.setProductName(productToUpdate.getProductName());
+        productForm.setProductWeight(productToUpdate.getProductWeight());
         productForm.setProductDescription(productToUpdate.getProductDescription());
-        productForm.setUpdatedAt(productToUpdate.getUpdatedAt());
         productForm.setCreatedAt(productToUpdate.getCreatedAt());
+
         model.addAttribute("form", productForm);
         return "updateProduct";
-        //add more data for editing
     }
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
@@ -75,16 +78,15 @@ public class ProductUIController {
         System.out.println(form);
         Product productToUpdate = new Product();
         productToUpdate.setId(form.getId());
+        productToUpdate.setProductType(form.getProductType());
+        productToUpdate.setProductCondition(form.getProductCondition());
         productToUpdate.setProductName(form.getProductName());
+        productToUpdate.setProductWeight(form.getProductWeight());
         productToUpdate.setProductDescription(form.getProductDescription());
-        productToUpdate.setCreatedAt(LocalDateTime.now());
+        productToUpdate.setCreatedAt(form.getCreatedAt());
         productToUpdate.setUpdatedAt(LocalDateTime.now());
 
         service.update(productToUpdate);
-
         return "redirect:/ui/v1/products/";
     }
-
-
-
 }

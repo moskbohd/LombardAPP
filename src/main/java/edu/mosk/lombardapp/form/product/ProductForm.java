@@ -9,12 +9,9 @@ package edu.mosk.lombardapp.form.product;
 import edu.mosk.lombardapp.model.product.Product;
 import edu.mosk.lombardapp.model.product.ProductCondition;
 import edu.mosk.lombardapp.model.product.ProductType;
-import edu.mosk.lombardapp.service.price.impls.PriceHistoryServiceImpl;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
-
-import static java.time.temporal.ChronoUnit.DAYS;
 
 public class ProductForm {
     private String id;
@@ -25,8 +22,6 @@ public class ProductForm {
     private String productDescription;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private boolean isWaitingForRedemption;
-    private LocalDateTime now = LocalDateTime.now();
 
     // CONSTRUCTORS
     public ProductForm() {
@@ -37,21 +32,14 @@ public class ProductForm {
         this.productDescription = productDescription;
     }
 
-    public ProductForm(String id, ProductType productType, ProductCondition productCondition, String productName, double productWeight, String productDescription) {
+    public ProductForm(String id, ProductType productType, ProductCondition productCondition, String productName, double productWeight, String productDescription, LocalDateTime createdAt) {
         this.id = id;
         this.productType = productType;
         this.productCondition = productCondition;
         this.productName = productName;
         this.productWeight = productWeight;
         this.productDescription = productDescription;
-        this.createdAt = now;
-        this.updatedAt = now;
-        if (DAYS.between(LocalDateTime.now(), getCreatedAt()) >= 30){
-            this.isWaitingForRedemption = false;
-        }else {
-            this.isWaitingForRedemption = true;
-        }
-        System.out.printf(String.valueOf(this.isWaitingForRedemption));
+        this.createdAt = createdAt;
     }
 
     // GETTERS AND SETTERS
