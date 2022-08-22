@@ -6,7 +6,7 @@ package edu.mosk.lombardapp.conroller.rest;
   @since 11.08.2022
 */
 
-import edu.mosk.lombardapp.model.Product;
+import edu.mosk.lombardapp.model.product.Product;
 import edu.mosk.lombardapp.service.product.impls.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

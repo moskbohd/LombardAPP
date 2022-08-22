@@ -6,8 +6,8 @@ package edu.mosk.lombardapp.conroller.ui;
   @since 11.08.2022
 */
 
-import edu.mosk.lombardapp.form.ProductForm;
-import edu.mosk.lombardapp.model.Product;
+import edu.mosk.lombardapp.form.product.ProductForm;
+import edu.mosk.lombardapp.model.product.Product;
 import edu.mosk.lombardapp.service.product.impls.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,12 +46,14 @@ public class ProductUIController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute("form") ProductForm form){
-         Product product = new Product();
-         product.setProductName(form.getProductName());
-         product.setProductDescription(form.getProductDescription());
-         service.create(product);
+        Product product = new Product();
+        product.setProductType(form.getProductType());
+        product.setProductCondition(form.getProductCondition());
+        product.setProductName(form.getProductName());
+        product.setProductWeight(form.getProductWeight());
+        product.setProductDescription(form.getProductDescription());
+        service.create(product);
         return "redirect:/ui/v1/products/";
-        //add more data for creating
     }
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)

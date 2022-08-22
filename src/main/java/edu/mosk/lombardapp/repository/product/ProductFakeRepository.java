@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.repository;
+package edu.mosk.lombardapp.repository.product;
 /*
   @author   moskb
   @project   LombardAPP
@@ -6,9 +6,9 @@ package edu.mosk.lombardapp.repository;
   @since 11.08.2022
 */
 
-import edu.mosk.lombardapp.model.Product;
-import edu.mosk.lombardapp.model.ProductCondition;
-import edu.mosk.lombardapp.model.ProductType;
+import edu.mosk.lombardapp.model.product.Product;
+import edu.mosk.lombardapp.model.product.ProductCondition;
+import edu.mosk.lombardapp.model.product.ProductType;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
@@ -23,8 +23,8 @@ public class ProductFakeRepository {
     private LocalDateTime now = LocalDateTime.now();
     private List<Product> products = new ArrayList<>(
             Arrays.asList(
-                    new Product("1", ProductType.JEWELER, ProductCondition.BELONGTOLOMBARD, "ruby", 0.5, "good", now, now),
-                    new Product("2", ProductType.TECHNICS, ProductCondition.BELONGTOLOMBARD, "iphone 6s", 1.5, "poor", now, now)
+                    new Product("1", ProductType.JEWELER, ProductCondition.BELONGTOLOMBARD, "ruby", 0.5, "good"),
+                    new Product("2", ProductType.TECHNICS, ProductCondition.BELONGTOLOMBARD, "iphone 6s", 1.5, "poor")
             ));
 
     public List<Product> findAll(){

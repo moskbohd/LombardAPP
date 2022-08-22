@@ -6,6 +6,8 @@ package edu.mosk.lombardapp.model;
   @since 11.08.2022
 */
 
+import edu.mosk.lombardapp.model.product.Product;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 

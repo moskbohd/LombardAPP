@@ -1,10 +1,12 @@
-package edu.mosk.lombardapp.model;
+package edu.mosk.lombardapp.model.price;
 /*
   @author   moskb
   @project   LombardAPP
   @version  1.0.0 
   @since 12.08.2022
 */
+
+import edu.mosk.lombardapp.model.product.Product;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.model;
+package edu.mosk.lombardapp.model.product;
 /*
   @author   moskb
   @project   LombardAPP
@@ -12,6 +12,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+import static java.time.temporal.ChronoUnit.DAYS;
+
 @Document
 public class Product {
     @Id
@@ -23,20 +25,28 @@ public class Product {
     private String productDescription;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private boolean isWaitingForRedemption;
+    private LocalDateTime now = LocalDateTime.now();
 
     // CONSTRUCTORS
     public Product() {
     }
 
-    public Product(String id, ProductType productType, ProductCondition productCondition, String productName, double productWeight, String productDescription, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Product(String id, ProductType productType, ProductCondition productCondition, String productName, double productWeight, String productDescription) {
         this.id = id;
         this.productType = productType;
         this.productCondition = productCondition;
         this.name = productName;
         this.productWeight = productWeight;
         this.productDescription = productDescription;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+        this.createdAt = now;
+        this.updatedAt = now;
+        if (DAYS.between(LocalDateTime.now(), getCreatedAt()) >= 30){
+            this.isWaitingForRedemption = false;
+        }else {
+            this.isWaitingForRedemption = true;
+        }
+        System.out.printf(String.valueOf(this.isWaitingForRedemption) + "here");
     }
 
     // GETTERS AND SETTERS

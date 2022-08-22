@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.form;
+package edu.mosk.lombardapp.form.product;
 /*
   @author   moskb
   @project   LombardAPP
@@ -6,45 +6,56 @@ package edu.mosk.lombardapp.form;
   @since 19.08.2022
 */
 
-import edu.mosk.lombardapp.model.Product;
-import edu.mosk.lombardapp.model.ProductCondition;
-import edu.mosk.lombardapp.model.ProductType;
+import edu.mosk.lombardapp.model.product.Product;
+import edu.mosk.lombardapp.model.product.ProductCondition;
+import edu.mosk.lombardapp.model.product.ProductType;
+import edu.mosk.lombardapp.service.price.impls.PriceHistoryServiceImpl;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+
+import static java.time.temporal.ChronoUnit.DAYS;
 
 public class ProductForm {
     private String id;
     private ProductType productType;
     private ProductCondition productCondition;
-    private String name;
+    private String productName;
     private double productWeight;
     private String productDescription;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-
+    private boolean isWaitingForRedemption;
+    private LocalDateTime now = LocalDateTime.now();
 
     // CONSTRUCTORS
     public ProductForm() {
     }
 
     public ProductForm(String name, String productDescription) {
-        this.name = name;
+        this.productName = name;
         this.productDescription = productDescription;
     }
 
-    public ProductForm(String id, ProductType productType, ProductCondition productCondition, String productName, double productWeight, String productDescription, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public ProductForm(String id, ProductType productType, ProductCondition productCondition, String productName, double productWeight, String productDescription) {
         this.id = id;
         this.productType = productType;
         this.productCondition = productCondition;
-        this.name = productName;
+        this.productName = productName;
         this.productWeight = productWeight;
         this.productDescription = productDescription;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+        this.createdAt = now;
+        this.updatedAt = now;
+        if (DAYS.between(LocalDateTime.now(), getCreatedAt()) >= 30){
+            this.isWaitingForRedemption = false;
+        }else {
+            this.isWaitingForRedemption = true;
+        }
+        System.out.printf(String.valueOf(this.isWaitingForRedemption));
     }
 
     // GETTERS AND SETTERS
+
     public String getId() {
         return id;
     }
@@ -70,11 +81,11 @@ public class ProductForm {
     }
 
     public String getProductName() {
-        return name;
+        return productName;
     }
 
     public void setProductName(String productName) {
-        this.name = productName;
+        this.productName = productName;
     }
 
     public double getProductWeight() {
@@ -111,7 +122,6 @@ public class ProductForm {
 
     // EQUALS AND HASHCODE
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -132,7 +142,7 @@ public class ProductForm {
                 "id='" + id + '\'' +
                 ", productType=" + productType +
                 ", productCondition=" + productCondition +
-                ", productName='" + name + '\'' +
+                ", productName='" + productName + '\'' +
                 ", productWeight=" + productWeight +
                 ", productDescription='" + productDescription + '\'' +
                 ", createdAt=" + createdAt +

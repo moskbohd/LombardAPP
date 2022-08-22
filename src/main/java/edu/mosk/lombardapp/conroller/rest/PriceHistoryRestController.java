@@ -6,7 +6,7 @@ package edu.mosk.lombardapp.conroller.rest;
   @since 11.08.2022
 */
 
-import edu.mosk.lombardapp.model.PriceHistory;
+import edu.mosk.lombardapp.model.price.PriceHistory;
 import edu.mosk.lombardapp.service.price.impls.PriceHistoryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

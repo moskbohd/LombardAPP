@@ -39,7 +39,7 @@
                     <td>${product.productCondition}</td>
                     <td>${product.productWeight}</td>
                     <td>${product.productDescription}</td>
-                    <td>${product.createdAt}</td>
+                    <td>${product.createdAt?if_exists}</td>
                     <td>${product.updatedAt?if_exists}</td>
                     <td><a href="/ui/v1/products/del/${product.id}"><button type="button" class="btn btn-danger">Del</button></a></td>
                     <td><a href="/ui/v1/products/edit/${product.id}"><button type="button" class="btn btn-info">Edit</button></a></td>

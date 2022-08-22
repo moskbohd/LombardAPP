@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.model;
+package edu.mosk.lombardapp.model.person;
 /*
   @author   moskb
   @project   LombardAPP

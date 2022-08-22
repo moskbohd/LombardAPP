@@ -1,5 +1,8 @@
 package edu.mosk.lombardapp.model;
 
+import edu.mosk.lombardapp.model.person.Person;
+import edu.mosk.lombardapp.model.product.Product;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 

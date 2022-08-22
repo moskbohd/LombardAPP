@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.repository;
+package edu.mosk.lombardapp.repository.price;
 /*
   @author   moskb
   @project   LombardAPP
@@ -6,7 +6,8 @@ package edu.mosk.lombardapp.repository;
   @since 15.08.2022
 */
 
-import edu.mosk.lombardapp.model.PriceHistory;
+import edu.mosk.lombardapp.model.price.PriceHistory;
+import edu.mosk.lombardapp.repository.product.ProductFakeRepository;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;

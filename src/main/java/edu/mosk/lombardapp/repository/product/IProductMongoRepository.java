@@ -1,6 +1,6 @@
 package edu.mosk.lombardapp.repository.product;
 
-import edu.mosk.lombardapp.model.Product;
+import edu.mosk.lombardapp.model.product.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

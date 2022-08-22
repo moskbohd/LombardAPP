@@ -6,7 +6,7 @@ package edu.mosk.lombardapp.service.price.interfaces;
   @since 11.08.2022
 */
 
-import edu.mosk.lombardapp.model.PriceHistory;
+import edu.mosk.lombardapp.model.price.PriceHistory;
 
 import java.util.List;
 
