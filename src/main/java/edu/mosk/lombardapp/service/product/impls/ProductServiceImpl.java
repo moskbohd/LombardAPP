@@ -18,17 +18,17 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 
 @Service
 public class ProductServiceImpl implements IProductServiceImpl {
-
-    private LocalDateTime now = LocalDateTime.now();
     private List<Product> products = new ArrayList<>(
             Arrays.asList(
-                    new Product("1", ProductType.JEWELER, ProductCondition.BELONGTOLOMBARD, "ruby", 0.5, "good", now),
-                    new Product("2", ProductType.TECHNICS, ProductCondition.BELONGTOLOMBARD, "iphone 6s", 1.5, "poor", now)
-            ));
+                    new Product("1", ProductType.JEWELER, ProductCondition.BELONGTOLOMBARD, "ruby", 0.5, "good", LocalDateTime.now()),
+                    new Product("2", ProductType.TECHNICS, ProductCondition.BELONGTOLOMBARD, "iphone 6s", 1.5, "poor", LocalDateTime.now())
+            )
+    );
     @Autowired
     IProductMongoRepository repository;
 
@@ -38,11 +38,16 @@ public class ProductServiceImpl implements IProductServiceImpl {
     }
 
     @Override
-    public Product create(Product product) { return repository.save(product);
+    public Product create(Product product) {
+        product.setId(UUID.randomUUID().toString());
+        product.setCreatedAt(LocalDateTime.now());
+        return repository.save(product);
     }
 
     @Override
-    public Product update(Product product) { return repository.save(product);
+    public Product update(Product product) {
+        product.setUpdatedAt(LocalDateTime.now());
+        return repository.save(product);
     }
 
     @Override
@@ -56,5 +61,4 @@ public class ProductServiceImpl implements IProductServiceImpl {
     @Override
     public List<Product> getAll() { return repository.findAll();
     }
-
 }

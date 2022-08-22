@@ -1,11 +1,9 @@
-package edu.mosk.lombardapp.repository.product;
+package edu.mosk.lombardapp.repository.price;
 
+import edu.mosk.lombardapp.model.price.PriceHistory;
 import edu.mosk.lombardapp.model.product.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 /*
   @author   moskb
@@ -15,6 +13,6 @@ import java.util.List;
 */
 
 @Repository
-public interface IProductMongoRepository extends MongoRepository<Product, String> {
+public interface IPriceHistoryMongoRepository extends MongoRepository<PriceHistory, String> {
 
 }

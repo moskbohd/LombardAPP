@@ -38,6 +38,17 @@ public class Product {
         this.createdAt = createdAt;
     }
 
+    public Product(String id, ProductType productType, ProductCondition productCondition, String name, double productWeight, String productDescription, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.productType = productType;
+        this.productCondition = productCondition;
+        this.name = name;
+        this.productWeight = productWeight;
+        this.productDescription = productDescription;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
     // GETTERS AND SETTERS
     public String getId() {
         return id;
@@ -82,7 +93,6 @@ public class Product {
     public String getProductDescription() {
         return productDescription;
     }
-
 
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;

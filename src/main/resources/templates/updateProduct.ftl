@@ -22,6 +22,8 @@
             <br>
             productDescription:<@spring.formInput "form.productDescription" "" "text" />
             <br>
+            createdAt:<@spring.formInput "form.createdAt"/>
+            <br>
             <input type="submit" value="Save">
 
         </form>

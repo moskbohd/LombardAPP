@@ -42,6 +42,16 @@ public class ProductForm {
         this.createdAt = createdAt;
     }
 
+    public ProductForm(String id, ProductType productType, ProductCondition productCondition, String productName, double productWeight, String productDescription, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.productType = productType;
+        this.productCondition = productCondition;
+        this.productName = productName;
+        this.productWeight = productWeight;
+        this.productDescription = productDescription;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
     // GETTERS AND SETTERS
 
     public String getId() {
