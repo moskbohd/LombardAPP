@@ -14,5 +14,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IPriceHistoryMongoRepository extends MongoRepository<PriceHistory, String> {
-
+    //double getLastPriceForProduct(Product product);
 }
