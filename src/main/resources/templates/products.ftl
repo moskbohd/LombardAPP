@@ -3,35 +3,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Products</title>
-    <style>
-        .table-center {
-            display: flex;
-            place-content: center;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Products</title>
 </head>
-<body>
+<body class="container-fluid p-4 my-4 bg-gradient text-bg-light">
 
-<h1>Hello, products! </h1>
-<div class="table-center">
-    <div class="table-center" style="width: 80%; display: flex; align-content: center">
-        <table class="table table-dark table-striped">
-            <thead>
-            <th> ID </th>
-            <th> Name </th>
-            <th> Product type </th>
-            <th> Product condition </th>
-            <th> Product weight </th>
-            <th> Description </th>
-            <th> Created At</th>
-            <th> Updated At</th>
-            <th> SHOW PRICE</th>
-            <th> DELETE</th>
-            <th> EDIT</th>
-            </thead>
-            <tbody
+<p class="h2">List of products</p>
+<div>
+    <table class="table table-striped-columns table-hover table-bordered table-responsive text-center">
+        <thead class="bg-dark text-bg-info bg-opacity-50">
+        <tr>
+            <th class="p-4 bg-gradient text-bg-light">ID</th>
+            <th class="p-4 bg-gradient text-bg-light">Name</th>
+            <th class="p-4 bg-gradient text-bg-light">Type</th>
+            <th class="p-4 bg-gradient text-bg-light">Condition</th>
+            <th class="p-4 bg-gradient text-bg-light">Weight</th>
+            <th class="p-4 bg-gradient text-bg-light">Description</th>
+            <th class="p-4 bg-gradient text-bg-light">Created at</th>
+            <th class="p-4 bg-gradient text-bg-light">Updated at</th>
+            <th class="p-4 bg-gradient text-bg-light">SHOW PRICE</th>
+            <th class="p-4 bg-gradient text-bg-light">DELETE</th>
+            <th class="p-4 bg-gradient text-bg-light">EDIT</th>
+        </tr>
+        </thead>
+        <tbody>
             <#list products as product >
                 <tr>
                     <td>${product.id}</td>
@@ -47,12 +43,10 @@
                     <td><a href="/ui/v1/products/edit/${product.id}"><button type="button" class="btn btn-info">Edit</button></a></td>
                 </tr>
             </#list>
-            </tbody>
-
-        </table>
-    </div>
+        </tbody>
+    </table>
 </div>
 
-<a href="/ui/v1/products/add">CREATE</a>
+<a href="/ui/v1/products/add"><mark>CREATE</mark></a>
 </body>
 </html>

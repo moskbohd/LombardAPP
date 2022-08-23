@@ -14,9 +14,9 @@
         <form name="product" action="" method="POST">
             productName:<@spring.formInput "form.productName" "" "text" />
             <br>
-            productType: (TECHNICS, JEWELER, TOYS, CLOTHES, OTHERS)<@spring.formInput "form.productType" "" "text" />
+            productType:<@spring.formSingleSelect "form.productType", types "" />
             <br>
-            productCondition: (BELONGTOOWNER, BELONGTOLOMBARD, SOLD)<@spring.formInput "form.productCondition" "" "text" />
+            productCondition:<@spring.formSingleSelect "form.productCondition", conditions "" />
             <br>
             productWeight:<@spring.formInput "form.productWeight" "" "double" />
             <br>
@@ -31,6 +31,8 @@
     </fieldset>
 
 </div>
+
+<a href="/ui/v1/products/"><mark>BACK</mark></a>
 
 </body>
 </html>

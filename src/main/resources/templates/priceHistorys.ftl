@@ -43,6 +43,6 @@
     </div>
 </div>
 
-<a href="/ui/v1/priceHistorys/add">CREATE</a>
+<a href="/ui/v1/products/"><mark>BACK TO PRODUCT</mark></a>
 </body>
 </html>

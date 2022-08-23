@@ -12,9 +12,9 @@
 
     <fieldset>
         <form name="product" action="" method="POST">
-            productType: (TECHNICS, JEWELER, TOYS, CLOTHES, OTHERS)<@spring.formInput "form.productType" "" "text" />
+            productType:<@spring.formSingleSelect "form.productType", types ""/>
             <br>
-            productCondition: (BELONGTOOWNER, BELONGTOLOMBARD, SOLD)<@spring.formInput "form.productCondition" "" "text" />
+            productCondition:<@spring.formSingleSelect "form.productCondition", conditions "" />
             <br>
             productName:<@spring.formInput "form.productName" "" "text" />
             <br>
@@ -29,6 +29,8 @@
     </fieldset>
 
 </div>
+
+<a href="/ui/v1/products/"><mark>BACK</mark></a>
 
 </body>
 </html>

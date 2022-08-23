@@ -8,6 +8,8 @@ package edu.mosk.lombardapp.conroller.ui;
 
 import edu.mosk.lombardapp.form.product.ProductForm;
 import edu.mosk.lombardapp.model.product.Product;
+import edu.mosk.lombardapp.model.product.ProductCondition;
+import edu.mosk.lombardapp.model.product.ProductType;
 import edu.mosk.lombardapp.service.product.impls.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @RequestMapping("/ui/v1/products")
@@ -40,7 +43,11 @@ public class ProductUIController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addProduct(Model model){
         ProductForm productForm = new ProductForm();
+        var types = ProductType.values();
+        var conditions = ProductCondition.values();
         model.addAttribute("form", productForm);
+        model.addAttribute("types", types);
+        model.addAttribute("conditions", conditions);
         return "addProduct";
     }
 
@@ -55,13 +62,17 @@ public class ProductUIController {
         product.setCreatedAt(LocalDateTime.now());
 
         service.create(product);
-        return "redirect:/ui/v1/product/products";
+        return "redirect:/ui/v1/products";
     }
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public String updateProduct(Model model, @PathVariable("id") String id){
         Product productToUpdate = service.get(id);
         ProductForm productForm = new ProductForm();
+        var types = ProductType.values();
+        var conditions = ProductCondition.values();
+        model.addAttribute("types", types);
+        model.addAttribute("conditions", conditions);
 
         productForm.setProductType(productToUpdate.getProductType());
         productForm.setProductCondition(productToUpdate.getProductCondition());
@@ -78,7 +89,6 @@ public class ProductUIController {
     public String updateProduct( @ModelAttribute("form") ProductForm form){
         System.out.println(form);
         Product productToUpdate = new Product();
-
         productToUpdate.setId(form.getId());
         productToUpdate.setProductType(form.getProductType());
         productToUpdate.setProductCondition(form.getProductCondition());
