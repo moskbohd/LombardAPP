@@ -7,6 +7,7 @@ package edu.mosk.lombardapp.service.price.interfaces;
 */
 
 import edu.mosk.lombardapp.model.price.PriceHistory;
+import edu.mosk.lombardapp.model.product.Product;
 
 import java.util.List;
 
@@ -16,4 +17,5 @@ public interface IPriceHistoryServiceImpl {
     PriceHistory get(String id);
     void delete(String id);
     List<PriceHistory> getAll();
+    double getLastPriceForProduct(Product product);
 }

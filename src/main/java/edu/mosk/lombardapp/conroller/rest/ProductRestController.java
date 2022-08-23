@@ -19,6 +19,7 @@ class ProductRestController {
 
     @Autowired
     private ProductServiceImpl service;
+
     @GetMapping("")
     public List<Product> showAll(){
         return service.getAll();
@@ -38,9 +39,13 @@ class ProductRestController {
     public Product insertOne(@RequestBody Product product){
         return service.create(product);
     }
+
     @PutMapping()
     public Product updateOne(@RequestBody Product product){
         return service.update(product);
     }
+
+    @PutMapping()
+    public double showLastPrice(@RequestBody Product product) { return service.getPriceForProduct(product);}
 
 }

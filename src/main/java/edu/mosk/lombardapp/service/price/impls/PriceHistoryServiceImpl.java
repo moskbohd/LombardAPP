@@ -8,6 +8,8 @@ package edu.mosk.lombardapp.service.price.impls;
 
 import edu.mosk.lombardapp.model.price.PriceHistory;
 import edu.mosk.lombardapp.model.product.Product;
+import edu.mosk.lombardapp.model.product.ProductCondition;
+import edu.mosk.lombardapp.model.product.ProductType;
 import edu.mosk.lombardapp.repository.price.IPriceHistoryMongoRepository;
 import edu.mosk.lombardapp.service.price.interfaces.IPriceHistoryServiceImpl;
 import edu.mosk.lombardapp.service.product.impls.ProductServiceImpl;
@@ -20,12 +22,14 @@ import java.util.*;
 @Service
 public class PriceHistoryServiceImpl implements IPriceHistoryServiceImpl {
 
-//    ProductServiceImpl productService = new ProductServiceImpl();
-//    private  List<PriceHistory> priceHistories = new ArrayList<>(
-//            Arrays.asList(
-//                    new PriceHistory("1",  productService.get("1"), "", LocalDateTime.now(),12.2)
-//            )
-//    );
+    ProductServiceImpl productService = new ProductServiceImpl();
+    private  List<PriceHistory> priceHistories = new ArrayList<>(
+            Arrays.asList(
+                    new PriceHistory("1", productService.get("1"), "", LocalDateTime.now(),12.2),
+                    new PriceHistory("2", productService.get("2"), "", LocalDateTime.now(), 100)
+            )
+    );
+
     @Autowired
     IPriceHistoryMongoRepository repository;
 

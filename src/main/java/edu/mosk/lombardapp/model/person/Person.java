@@ -154,7 +154,6 @@ public class Person {
         return Objects.hash(getId());
     }
 
-
     // TO STRING
     @Override
     public String toString() {

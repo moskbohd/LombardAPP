@@ -10,6 +10,7 @@ import edu.mosk.lombardapp.model.product.Product;
 import edu.mosk.lombardapp.model.product.ProductCondition;
 import edu.mosk.lombardapp.model.product.ProductType;
 import edu.mosk.lombardapp.repository.product.IProductMongoRepository;
+import edu.mosk.lombardapp.service.price.impls.PriceHistoryServiceImpl;
 import edu.mosk.lombardapp.service.product.interfaces.IProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,5 +61,9 @@ public class ProductServiceImpl implements IProductServiceImpl {
 
     @Override
     public List<Product> getAll() { return repository.findAll();
+    }
+    public double getPriceForProduct(Product product){
+        PriceHistoryServiceImpl priceHistoryService = new PriceHistoryServiceImpl();
+        return priceHistoryService.getLastPriceForProduct(product);
     }
 }

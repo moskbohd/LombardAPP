@@ -1,7 +1,6 @@
 package edu.mosk.lombardapp.repository.price;
 
 import edu.mosk.lombardapp.model.price.PriceHistory;
-import edu.mosk.lombardapp.model.product.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

@@ -4,9 +4,6 @@ import edu.mosk.lombardapp.model.product.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
 /*
   @author   moskb
   @project   LombardAPP

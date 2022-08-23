@@ -1,9 +1,9 @@
-package edu.mosk.lombardapp.model.price;
+package edu.mosk.lombardapp.form.price;
 /*
   @author   moskb
   @project   LombardAPP
   @version  1.0.0 
-  @since 12.08.2022
+  @since 23.08.2022
 */
 
 import edu.mosk.lombardapp.model.product.Product;
@@ -11,7 +11,7 @@ import edu.mosk.lombardapp.model.product.Product;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class PriceHistory {
+public class PriceHistoryForm {
     private String id;
     private Product product;
     private String description;
@@ -20,10 +20,10 @@ public class PriceHistory {
 
 
     // CONSTRUCTORS
-    public PriceHistory() {
+    public PriceHistoryForm() {
     }
 
-    public PriceHistory(String id, Product product, String description, LocalDateTime createdAt, double price) {
+    public PriceHistoryForm(String id, Product product, String description, LocalDateTime createdAt, double price) {
         this.id = id;
         this.product = product;
         this.description = description;
@@ -76,7 +76,7 @@ public class PriceHistory {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PriceHistory that)) return false;
+        if (!(o instanceof PriceHistoryForm that)) return false;
         return Double.compare(that.getPrice(), getPrice()) == 0 && getId().equals(that.getId()) && getProduct().equals(that.getProduct()) && Objects.equals(getDescription(), that.getDescription()) && getCreatedAt().equals(that.getCreatedAt());
     }
 

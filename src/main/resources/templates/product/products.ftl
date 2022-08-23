@@ -20,6 +20,7 @@
         <table class="table table-dark table-striped">
             <thead>
             <th> ID </th>
+            <th> Price </th>
             <th> Name </th>
             <th> Product type </th>
             <th> Product condition </th>
@@ -29,11 +30,13 @@
             <th> Updated At</th>
             <th> DELETE</th>
             <th> EDIT</th>
+            <th> SHOW PRICE HISTORY</th>
             </thead>
             <tbody
             <#list products as product >
                 <tr>
                     <td>${product.id}</td>
+                    <td>${product.productName}</td>
                     <td>${product.productName}</td>
                     <td>${product.productType}</td>
                     <td>${product.productCondition}</td>
@@ -43,6 +46,7 @@
                     <td>${product.updatedAt!}</td>
                     <td><a href="/ui/v1/products/del/${product.id}"><button type="button" class="btn btn-danger">Del</button></a></td>
                     <td><a href="/ui/v1/products/edit/${product.id}"><button type="button" class="btn btn-info">Edit</button></a></td>
+                    <td><a href="/ui/v1/priceHistory/${product.id}"><button type="button" class="btn btn-info">SHOW PRICE</button></a></td>
                 </tr>
             </#list>
             </tbody>
