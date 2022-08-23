@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 
 
-@RequestMapping("/ui/v1/products/")
+@RequestMapping("/ui/v1/products")
 @Controller
 public class ProductUIController {
 
@@ -55,13 +55,14 @@ public class ProductUIController {
         product.setCreatedAt(LocalDateTime.now());
 
         service.create(product);
-        return "redirect:/ui/v1/products/";
+        return "redirect:/ui/v1/product/products";
     }
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public String updateProduct(Model model, @PathVariable("id") String id){
         Product productToUpdate = service.get(id);
         ProductForm productForm = new ProductForm();
+
         productForm.setProductType(productToUpdate.getProductType());
         productForm.setProductCondition(productToUpdate.getProductCondition());
         productForm.setProductName(productToUpdate.getProductName());
@@ -77,6 +78,7 @@ public class ProductUIController {
     public String updateProduct( @ModelAttribute("form") ProductForm form){
         System.out.println(form);
         Product productToUpdate = new Product();
+
         productToUpdate.setId(form.getId());
         productToUpdate.setProductType(form.getProductType());
         productToUpdate.setProductCondition(form.getProductCondition());

@@ -1,3 +1,4 @@
+<#import "/spring.ftl" as spring/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,11 @@
     <title>Title</title>
 </head>
 <body>
+<h1>Add new price for the product</h1>
 
-<h1>Hello,  lombard! </h1>
+<div>
 
-<a href="http://localhost:8080/ui/v1/products"> UI tables </a>
+</div>
 
 </body>
 </html>

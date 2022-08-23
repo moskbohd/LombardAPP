@@ -27,6 +27,7 @@
             <th> Description </th>
             <th> Created At</th>
             <th> Updated At</th>
+            <th> SHOW PRICE</th>
             <th> DELETE</th>
             <th> EDIT</th>
             </thead>
@@ -41,6 +42,7 @@
                     <td>${product.productDescription}</td>
                     <td>${product.createdAt!}</td>
                     <td>${product.updatedAt!}</td>
+                    <td><a href="/ui/v1/priceHistorys/"><button type="button" class="btn btn-danger">SHOW PRICE</button></a></td>
                     <td><a href="/ui/v1/products/del/${product.id}"><button type="button" class="btn btn-danger">Del</button></a></td>
                     <td><a href="/ui/v1/products/edit/${product.id}"><button type="button" class="btn btn-info">Edit</button></a></td>
                 </tr>
