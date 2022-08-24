@@ -9,6 +9,7 @@ package edu.mosk.lombardapp.conroller.rest;
 import edu.mosk.lombardapp.model.price.PriceHistory;
 import edu.mosk.lombardapp.model.product.Product;
 import edu.mosk.lombardapp.service.price.impls.PriceHistoryServiceImpl;
+import edu.mosk.lombardapp.service.product.impls.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ import java.util.List;
 @RestController
 public class PriceHistoryRestController {
     @Autowired
-    private PriceHistoryServiceImpl service;
+    PriceHistoryServiceImpl service;
     @GetMapping("")
     public List<PriceHistory> showAll(){
         return service.getAll();
@@ -43,12 +44,12 @@ public class PriceHistoryRestController {
     public PriceHistory updateOne(@RequestBody PriceHistory priceHistory){
         return service.update(priceHistory);
     }
-//    @GetMapping("/lastPrice/{id}")
-//    public double getLastPriceForProduct(@RequestBody Product product){
-//        return  service.getAll().stream()
-//                .filter(priceHistory -> priceHistory.getProduct().equals(product))
-//                .max(Comparator.comparing(PriceHistory::getCreatedAt))
-//                .orElse(null)
-//                .getPrice();
-//    }
+    @GetMapping("/lastPrice/{id}")
+    public double getLastPriceForProduct(@RequestBody Product product){
+        return  service.getAll().stream()
+                .filter(priceHistory -> priceHistory.getProduct().equals(product))
+                .max(Comparator.comparing(PriceHistory::getCreatedAt))
+                .orElse(null)
+                .getPrice();
+    }
 }

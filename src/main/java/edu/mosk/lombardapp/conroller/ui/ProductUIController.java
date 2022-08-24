@@ -11,16 +11,17 @@ import edu.mosk.lombardapp.model.product.Product;
 import edu.mosk.lombardapp.model.product.ProductCondition;
 import edu.mosk.lombardapp.model.product.ProductType;
 import edu.mosk.lombardapp.service.product.impls.ProductServiceImpl;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 
-@RequestMapping("/ui/v1/products")
+@RequestMapping("/ui/v1/product/products")
 @Controller
 public class ProductUIController {
 
@@ -28,16 +29,17 @@ public class ProductUIController {
     ProductServiceImpl service;
 
     @GetMapping("")
+    @ApiOperation(value = "GET List of all products")
+    @ApiResponse(code = 200, message = "success")
     public String showAll(Model model){
         model.addAttribute("products", service.getAll());
-        return "products";
+        return "product/products";
     }
-
 
     @GetMapping("/del/{id}")
     public String deleteById(@PathVariable("id") String id) {
         service.delete(id);
-        return "redirect:/ui/v1/products/";
+        return "redirect:/ui/v1/product/products/";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
@@ -48,7 +50,7 @@ public class ProductUIController {
         model.addAttribute("form", productForm);
         model.addAttribute("types", types);
         model.addAttribute("conditions", conditions);
-        return "addProduct";
+        return "product/addProduct";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
@@ -62,7 +64,7 @@ public class ProductUIController {
         product.setCreatedAt(LocalDateTime.now());
 
         service.create(product);
-        return "redirect:/ui/v1/products";
+        return "redirect:/ui/v1/product/products";
     }
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
@@ -82,7 +84,7 @@ public class ProductUIController {
         productForm.setCreatedAt(productToUpdate.getCreatedAt());
 
         model.addAttribute("form", productForm);
-        return "updateProduct";
+        return "product/updateProduct";
     }
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
@@ -99,6 +101,6 @@ public class ProductUIController {
         productToUpdate.setUpdatedAt(LocalDateTime.now());
 
         service.update(productToUpdate);
-        return "redirect:/ui/v1/products/";
+        return "redirect:/ui/v1/product/products/";
     }
 }

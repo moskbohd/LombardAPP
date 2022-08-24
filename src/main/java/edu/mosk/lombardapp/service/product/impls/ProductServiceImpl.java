@@ -32,6 +32,7 @@ public class ProductServiceImpl implements IProductServiceImpl {
     @Autowired
     IProductMongoRepository repository;
 
+
     @PostConstruct
     void init(){
         repository.saveAll((products));

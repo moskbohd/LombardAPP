@@ -6,7 +6,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Add new product</h1>
+<h1>Add new price for the product</h1>
 
 <div>
 
@@ -30,7 +30,7 @@
 
 </div>
 
-<a href="/ui/v1/products/"><mark>BACK</mark></a>
+<a href="/ui/v1/price/priceHistory/"><mark>BACK</mark></a>
 
 </body>
 </html>

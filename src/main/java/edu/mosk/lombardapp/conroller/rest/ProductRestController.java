@@ -13,27 +13,24 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/api/v1/products/")
+@RequestMapping("/api/v1/product/products")
 @RestController
 class ProductRestController {
 
     @Autowired
-    private ProductServiceImpl service;
+    ProductServiceImpl service;
     @GetMapping("")
     public List<Product> showAll(){
         return service.getAll();
     }
-
     @GetMapping("/{id}")
     public Product showOne(@PathVariable String id){
         return service.get(id);
     }
-
     @DeleteMapping("/{id}")
     public void del(@PathVariable String id){
         service.delete(id);
     }
-
     @PostMapping()
     public Product insertOne(@RequestBody Product product){
         return service.create(product);

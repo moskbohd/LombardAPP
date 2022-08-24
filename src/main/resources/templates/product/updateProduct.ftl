@@ -32,7 +32,7 @@
 
 </div>
 
-<a href="/ui/v1/products/"><mark>BACK</mark></a>
+<a href="/ui/v1/product/products/"><mark>BACK</mark></a>
 
 </body>
 </html>

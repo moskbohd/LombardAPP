@@ -52,8 +52,8 @@ public class ProductForm {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
-    // GETTERS AND SETTERS
 
+    // GETTERS AND SETTERS
     public String getId() {
         return id;
     }
@@ -119,7 +119,6 @@ public class ProductForm {
     }
 
     // EQUALS AND HASHCODE
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -133,7 +132,6 @@ public class ProductForm {
     }
 
     // TO STRING
-
     @Override
     public String toString() {
         return "Product{" +

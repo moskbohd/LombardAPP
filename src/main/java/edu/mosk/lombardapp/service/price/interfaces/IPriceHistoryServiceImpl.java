@@ -16,6 +16,10 @@ public interface IPriceHistoryServiceImpl {
     PriceHistory update(PriceHistory priceHistory);
     PriceHistory get(String id);
     void delete(String id);
+
+    List<PriceHistory> getProductHistoryById(String id);
+
     List<PriceHistory> getAll();
-    //double getLastPriceForProduct(Product product);
+    double getLastPriceForProduct(Product product);
+
 }

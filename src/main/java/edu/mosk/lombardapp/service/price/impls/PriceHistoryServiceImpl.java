@@ -19,11 +19,11 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 @Service
 public class PriceHistoryServiceImpl implements IPriceHistoryServiceImpl {
-    ProductServiceImpl productService = new ProductServiceImpl();
     Product product = new Product("0", ProductType.JEWELER, ProductCondition.BELONGTOLOMBARD, "ruby", 0.5, "good", LocalDateTime.now());
     private List<PriceHistory> priceHistories = new ArrayList<>(
             Arrays.asList(
@@ -36,7 +36,7 @@ public class PriceHistoryServiceImpl implements IPriceHistoryServiceImpl {
 
     @PostConstruct
     void init(){
-        repository.saveAll((priceHistories));
+        repository.saveAll(priceHistories);
     }
 
     @Override
@@ -61,15 +61,21 @@ public class PriceHistoryServiceImpl implements IPriceHistoryServiceImpl {
     }
 
     @Override
-    public List<PriceHistory> getAll() { return repository.findAll();
+    public List<PriceHistory> getProductHistoryById(String id) {
+        return repository.findAll().stream()
+                .filter(priceHistory -> priceHistory.getProduct().getId().equals(id))
+                .collect(Collectors.toList());
+    }@Override
+    public List<PriceHistory> getAll( ) {
+        return repository.findAll();
     }
 
-//    @Override
-//    public double getLastPriceForProduct(Product product){
-//        return getAll().stream()
-//                .filter(priceHistory -> priceHistory.getProduct().equals(product))
-//                .max(Comparator.comparing(PriceHistory::getCreatedAt))
-//                .orElse(null)
-//                .getPrice();
-//    }
+    @Override
+    public double getLastPriceForProduct(Product product){
+        return getAll().stream()
+                .filter(priceHistory -> priceHistory.getProduct().equals(product))
+                .max(Comparator.comparing(PriceHistory::getCreatedAt))
+                .orElse(null)
+                .getPrice();
+    }
 }
