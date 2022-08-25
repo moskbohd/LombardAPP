@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.model;
+package edu.mosk.lombardapp.model.product;
 /*
   @author   moskb
   @project   LombardAPP

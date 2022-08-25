@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.service.interfaces;
+package edu.mosk.lombardapp.service.price.interfaces;
 /*
   @author   moskb
   @project   LombardAPP
@@ -6,7 +6,8 @@ package edu.mosk.lombardapp.service.interfaces;
   @since 11.08.2022
 */
 
-import edu.mosk.lombardapp.model.PriceHistory;
+import edu.mosk.lombardapp.model.price.PriceHistory;
+import edu.mosk.lombardapp.model.product.Product;
 
 import java.util.List;
 
@@ -15,5 +16,10 @@ public interface IPriceHistoryServiceImpl {
     PriceHistory update(PriceHistory priceHistory);
     PriceHistory get(String id);
     void delete(String id);
+
+    List<PriceHistory> getProductHistoryById(String id);
+
     List<PriceHistory> getAll();
+    double getLastPriceForProduct(Product product);
+
 }

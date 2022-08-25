@@ -1,15 +1,19 @@
-package edu.mosk.lombardapp.model;
+package edu.mosk.lombardapp.form.product;
 /*
   @author   moskb
   @project   LombardAPP
-  @version  1.0.0
-  @since 11.08.2022
+  @version  1.0.0 
+  @since 19.08.2022
 */
+
+import edu.mosk.lombardapp.model.product.Product;
+import edu.mosk.lombardapp.model.product.ProductCondition;
+import edu.mosk.lombardapp.model.product.ProductType;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Product {
+public class ProductForm {
     private String id;
     private ProductType productType;
     private ProductCondition productCondition;
@@ -19,12 +23,26 @@ public class Product {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-
     // CONSTRUCTORS
-    public Product() {
+    public ProductForm() {
     }
 
-    public Product(String id, ProductType productType, ProductCondition productCondition, String productName, double productWeight, String productDescription, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public ProductForm(String name, String productDescription) {
+        this.productName = name;
+        this.productDescription = productDescription;
+    }
+
+    public ProductForm(String id, ProductType productType, ProductCondition productCondition, String productName, double productWeight, String productDescription, LocalDateTime createdAt) {
+        this.id = id;
+        this.productType = productType;
+        this.productCondition = productCondition;
+        this.productName = productName;
+        this.productWeight = productWeight;
+        this.productDescription = productDescription;
+        this.createdAt = createdAt;
+    }
+
+    public ProductForm(String id, ProductType productType, ProductCondition productCondition, String productName, double productWeight, String productDescription, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.productType = productType;
         this.productCondition = productCondition;
@@ -101,8 +119,6 @@ public class Product {
     }
 
     // EQUALS AND HASHCODE
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -116,7 +132,6 @@ public class Product {
     }
 
     // TO STRING
-
     @Override
     public String toString() {
         return "Product{" +

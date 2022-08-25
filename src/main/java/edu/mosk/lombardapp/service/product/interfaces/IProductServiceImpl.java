@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.service.interfaces;
+package edu.mosk.lombardapp.service.product.interfaces;
 /*
   @author   moskb
   @project   LombardAPP
@@ -6,7 +6,7 @@ package edu.mosk.lombardapp.service.interfaces;
   @since 11.08.2022
 */
 
-import edu.mosk.lombardapp.model.Product;
+import edu.mosk.lombardapp.model.product.Product;
 
 import java.util.List;
 
