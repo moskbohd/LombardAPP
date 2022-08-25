@@ -12,19 +12,19 @@
 <p class="h2">List of products</p>
 <div>
     <table class="table table-striped-columns table-hover table-bordered table-responsive text-center">
-        <thead class="bg-dark text-bg-info bg-opacity-50">
+        <thead class="bg-dark text-bg-info bg-opacity-50 p-4 bg-gradient text-bg-light">
             <tr>
-                <th class="p-4 bg-gradient text-bg-light">ID</th>
-                <th class="p-4 bg-gradient text-bg-light">Name</th>
-                <th class="p-4 bg-gradient text-bg-light">Type</th>
-                <th class="p-4 bg-gradient text-bg-light">Condition</th>
-                <th class="p-4 bg-gradient text-bg-light">Weight</th>
-                <th class="p-4 bg-gradient text-bg-light">Description</th>
-                <th class="p-4 bg-gradient text-bg-light">Created at</th>
-                <th class="p-4 bg-gradient text-bg-light">Updated at</th>
-                <th class="p-4 bg-gradient text-bg-light">SHOW PRICE</th>
-                <th class="p-4 bg-gradient text-bg-light">DELETE</th>
-                <th class="p-4 bg-gradient text-bg-light">EDIT</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Condition</th>
+                <th>Weight</th>
+                <th>Description</th>
+                <th>Created at</th>
+                <th>Updated at</th>
+                <th>SHOW PRICE</th>
+                <th>DELETE</th>
+                <th>EDIT</th>
             </tr>
         </thead>
         <tbody>
@@ -47,6 +47,19 @@
     </table>
 </div>
 
-<a href="/ui/v1/product/products/add"><button type="button" class="btn-outline-success">CREATE</button></a>
+<div class="container-fluid p-8">
+    <a href="/ui/v1/product/products/add"><button type="button" class="btn-success">CREATE NEW PRODUCT</button></a>
+</div>
+
+<div class="container p-4 top-100 m-16 h1 text-center">
+    <p>
+        Pawnshop admin panel for product tracking and product price history.
+    </p>
+    <p>
+        The work was done by Bohdan Moskalskyi.
+    </p>
+</div>
+
+
 </body>
 </html>

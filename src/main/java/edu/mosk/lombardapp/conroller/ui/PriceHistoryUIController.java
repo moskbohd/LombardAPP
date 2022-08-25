@@ -32,8 +32,8 @@ public class PriceHistoryUIController {
     }
     @GetMapping("/{id}")
     public String getLastPriceForProduct(Model model, @PathVariable String id){
-        List<PriceHistory> items = service.getProductHistoryById(id);
-        model.addAttribute("items", items);
+        List<PriceHistory> priceHistories = service.getProductHistoryById(id);
+        model.addAttribute("priceHistories", priceHistories);
         return "price/priceHistorys";
     }
 
@@ -52,13 +52,12 @@ public class PriceHistoryUIController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addPrice(@ModelAttribute("form") PriceHistoryForm form){
-        PriceHistory priceHistory = new PriceHistory();
-        priceHistory.setPrice(form.getPrice());
-        priceHistory.setDescription(form.getDescription());
-        //priceHistory.setProduct(form.getProduct());
-        priceHistory.setCreatedAt(LocalDateTime.now());
+        PriceHistory price = new PriceHistory();
+        price.setPrice(form.getPrice());
+        price.setCreatedAt(LocalDateTime.now());
 
-        service.create(priceHistory);
+        service.create(price);
         return "redirect:/ui/v1/price/priceHistorys/";
     }
 }
+
