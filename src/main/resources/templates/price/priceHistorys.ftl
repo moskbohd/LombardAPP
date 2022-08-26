@@ -13,9 +13,9 @@
 <div>
     <table class="table table-striped-columns table-hover table-bordered table-responsive text-center">
         <thead class="bg-dark text-bg-info bg-opacity-50">
-            <th class="p-4 bg-gradient text-bg-light"> Product ID </th>
+            <th class="p-4 bg-gradient text-bg-light"> Price ID </th>
             <th class="p-4 bg-gradient text-bg-light"> Price EUR</th>
-            <th class="p-4 bg-gradient text-bg-light"> Created At</th>
+            <th class="p-4 bg-gradient text-bg-light"> Price Created At</th>
             <th class="p-4 bg-gradient text-bg-light"> DELETE</th>
         </thead>
         <tbody
@@ -24,14 +24,14 @@
                 <td>${price.id!}</td>
                 <td>${price.price!}</td>
                 <td>${price.createdAt!}</td>
-                <td><a href="/ui/v1/price/priceHistorys/del/${price.id}"><button type="button" class="btn btn-danger">Del</button></a></td>
+                <td><a href="/ui/v1/price/priceHistorys/del/${price.id}"><button type="button" class="btn btn-danger">DELETE</button></a></td>
             </tr>
         </#list>
         </tbody>
     </table>
 </div>
 
-<a href="/ui/v1/price/priceHistorys/add"><button type="button" class="btn-outline-success">CREATE</button></a>
+<a href="/ui/v1/price/priceHistorys/add"><button type="button" class="btn-outline-success">ADD</button></a>
 <a href="/ui/v1/product/products/"><button class="btn-dark btn-sm">BACK TO PRODUCT</button></a>
 </body>
 </html>

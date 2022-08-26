@@ -23,7 +23,7 @@ import java.util.UUID;
 
 @Service
 public class ProductServiceImpl implements IProductServiceImpl {
-    private List<Product> products = new ArrayList<>(
+    private final List<Product> products = new ArrayList<>(
             Arrays.asList(
                     new Product("1", ProductType.JEWELER, ProductCondition.BELONGTOLOMBARD, "ruby", 0.5, "good", LocalDateTime.now()),
                     new Product("2", ProductType.TECHNICS, ProductCondition.BELONGTOLOMBARD, "iphone 6s", 1.5, "poor", LocalDateTime.now())

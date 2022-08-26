@@ -1,4 +1,4 @@
-package edu.mosk.lombardapp.conroller.ui;
+package edu.mosk.lombardapp.controller.ui;
 /*
   @author   moskb
   @project   LombardAPP

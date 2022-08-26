@@ -25,7 +25,8 @@
             Product description:    <@spring.formInput "form.productDescription" "" "text" />
             <br>
             Created at:<@spring.formInput "form.createdAt"/>
-            <input  type="submit" value="Create" class="btn-outline-success">
+            <br>
+            <input  type="submit" value="Save" class="btn-outline-success">
         </form>
     </fieldset>
 </div>

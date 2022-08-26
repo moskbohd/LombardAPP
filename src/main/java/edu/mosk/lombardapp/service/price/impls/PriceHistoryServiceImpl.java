@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 @Service
 public class PriceHistoryServiceImpl implements IPriceHistoryServiceImpl {
     Product product = new Product("0", ProductType.JEWELER, ProductCondition.BELONGTOLOMBARD, "ruby", 0.5, "good", LocalDateTime.now());
-    private List<PriceHistory> priceHistories = new ArrayList<>(
+    private final List<PriceHistory> priceHistories = new ArrayList<>(
             Arrays.asList(
                     new PriceHistory("1", product, "", LocalDateTime.now(), 22),
                     new PriceHistory("2", product, "", LocalDateTime.now(), 50)
